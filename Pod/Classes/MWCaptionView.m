@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 #import "MWCommon.h"
 #import "MWCaptionView.h"
@@ -130,7 +130,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     
     self.userNameLabel.numberOfLines = 1;
     self.userNameLabel.textColor = [UIColor whiteColor];
-    self.userNameLabel.font = [UIFont fontWithName:@"ProximaNova" size:12];
+    self.userNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
     
     if ([_photo respondsToSelector:@selector(username)]) {
         self.userNameLabel.text = [_photo username] ? : @" ";
@@ -149,7 +149,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     self.reviewDateLabel.textAlignment = NSTextAlignmentRight;
     self.reviewDateLabel.numberOfLines = 1;
     self.reviewDateLabel.textColor = [UIColor colorWithRed:145/255.0f green:145/255.0f blue:145/255.0f alpha:1];
-    self.reviewDateLabel.font = [UIFont fontWithName:@"ProximaNova" size:12];
+    self.reviewDateLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
     
     if ([_photo respondsToSelector:@selector(reviewDate)]) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -173,7 +173,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     
     self.reviewTextLabel.numberOfLines = 0;
     self.reviewTextLabel.textColor = [UIColor whiteColor];
-    self.reviewTextLabel.font = [UIFont fontWithName:@"ProximaNova" size:14];
+    self.reviewTextLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
     
     if ([_photo respondsToSelector:@selector(reviewText)]) {
         self.reviewTextLabel.text = [_photo reviewText] ? : @" ";
