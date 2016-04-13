@@ -260,6 +260,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				5FDE805C8BB47D59B5BCB5FA /* Copy Pods Resources */,
+				03C3FF67288CFD3E45D9E49B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +280,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				3CC5A2FF9CBF1B37D7CB6F91 /* Copy Pods Resources */,
+				3E1F6A462FC05337AE9BA955 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +366,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03C3FF67288CFD3E45D9E49B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MWPhotoBrowser_Example/Pods-MWPhotoBrowser_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3CC5A2FF9CBF1B37D7CB6F91 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,6 +394,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MWPhotoBrowser_Tests/Pods-MWPhotoBrowser_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E1F6A462FC05337AE9BA955 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MWPhotoBrowser_Tests/Pods-MWPhotoBrowser_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5FDE805C8BB47D59B5BCB5FA /* Copy Pods Resources */ = {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Reg.otf">
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MWCaptionView">
+            <connections>
+                <outlet property="avatarImageView" destination="h46-Wa-QRw" id="S3w-6q-9gc"/>
+                <outlet property="dateLabel" destination="kv5-eH-1Rc" id="SUE-PG-rUw"/>
+                <outlet property="nameLabel" destination="rL9-Zx-1Af" id="C8q-Sk-vER"/>
+                <outlet property="reviewTextLabel" destination="UeV-PF-SNx" id="zeO-MH-S1E"/>
+                <outlet property="view" destination="iN0-l3-epB" id="4tk-NK-aRk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="665" height="318"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="h46-Wa-QRw">
+                    <rect key="frame" x="16" y="18" width="24" height="24"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="dE7-s1-ygp"/>
+                        <constraint firstAttribute="height" constant="24" id="ufy-LB-xkt"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Татьяна Иванова" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rL9-Zx-1Af">
+                    <rect key="frame" x="52" y="21" width="443" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="EPD-Ba-mTB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" misplaced="YES" text="Отравили шаурмой :(" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeV-PF-SNx">
+                    <rect key="frame" x="16" y="55" width="568" height="17"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="30 сентября 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv5-eH-1Rc">
+                    <rect key="frame" x="550" y="23" width="99" height="14"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                    <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kv5-eH-1Rc" firstAttribute="leading" secondItem="rL9-Zx-1Af" secondAttribute="trailing" constant="8" id="3T1-gu-8ua"/>
+                <constraint firstAttribute="trailing" secondItem="UeV-PF-SNx" secondAttribute="trailing" constant="16" id="8G8-f7-0Gm"/>
+                <constraint firstAttribute="trailing" secondItem="kv5-eH-1Rc" secondAttribute="trailing" constant="16" id="Cfl-m5-Mr2"/>
+                <constraint firstItem="rL9-Zx-1Af" firstAttribute="leading" secondItem="h46-Wa-QRw" secondAttribute="trailing" constant="12" id="FZW-3d-f8g"/>
+                <constraint firstItem="rL9-Zx-1Af" firstAttribute="centerY" secondItem="h46-Wa-QRw" secondAttribute="centerY" id="fbM-Kl-lwc"/>
+                <constraint firstItem="UeV-PF-SNx" firstAttribute="top" secondItem="h46-Wa-QRw" secondAttribute="bottom" constant="13" id="ikQ-Tu-Xe7"/>
+                <constraint firstItem="kv5-eH-1Rc" firstAttribute="centerY" secondItem="rL9-Zx-1Af" secondAttribute="centerY" id="kdV-YM-z6M"/>
+                <constraint firstItem="h46-Wa-QRw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="18" id="kg7-hF-Kz8"/>
+                <constraint firstItem="h46-Wa-QRw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="q9W-ti-aUA"/>
+                <constraint firstItem="UeV-PF-SNx" firstAttribute="leading" secondItem="h46-Wa-QRw" secondAttribute="leading" id="reo-Yj-NgV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="112.5" y="461"/>
+        </view>
+    </objects>
+</document>

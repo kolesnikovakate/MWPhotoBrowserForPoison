@@ -186,6 +186,19 @@
 			break;
 		case 1: {
             // Local Photos and Videos
+            [photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/413820_105567142909931_181440063_o.jpg"]
+                                           username:@"Екатерина Колесникова"
+                                       userImageURL:[NSURL URLWithString:@"https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/413820_105567142909931_181440063_o.jpg"]
+                                         reviewText:@"Тут я пишу отзыв."
+                                         reviewDate:[NSDate date]]];
+            
+            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo5" ofType:@"jpg"]]];
+            photo.username = @"Екатерина Колесникова";
+            photo.userImageURL = [NSURL URLWithString:@"https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/413820_105567142909931_181440063_o.jpg"];
+            photo.reviewText = @"Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв.";
+            photo.reviewDate = [NSDate date];
+            [photos addObject:photo];
+            
             photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo5" ofType:@"jpg"]]];
             photo.caption = @"Fireworks";
 			[photos addObject:photo];
@@ -1202,7 +1215,10 @@
 //- (MWCaptionView *)photoBrowser:(MWPhotoBrowser *)photoBrowser captionViewForPhotoAtIndex:(NSUInteger)index {
 //    MWPhoto *photo = [self.photos objectAtIndex:index];
 //    MWCaptionView *captionView = [[MWCaptionView alloc] initWithPhoto:photo];
-//    return [captionView autorelease];
+//    UIView *view = [[UIView alloc] init];
+//    view.frame = CGRectMake(0, 0, 100, 100);
+//    view.backgroundColor = [UIColor redColor];
+//    return view;
 //}
 
 //- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index {

@@ -19,16 +19,17 @@ Pod::Spec.new do |s|
     'https://raw.github.com/mwaterfall/MWPhotoBrowser/master/Screenshots/MWPhotoBrowser6.png'
   ]
 
-  s.homepage = 'https://github.com/mwaterfall/MWPhotoBrowser'
+  s.homepage = 'http://gitlab.trinitydigital.ru/poison/MWPhotoBrowserForPoison'
   s.author = { 'Michael Waterfall' => 'michaelwaterfall@gmail.com' }
   s.social_media_url = 'https://twitter.com/mwaterfall'
 
   s.source = {
-    :git => 'https://github.com/mwaterfall/MWPhotoBrowser.git',
+    :git => 'http://gitlab.trinitydigital.ru/poison/MWPhotoBrowserForPoison.git',
     :tag => '2.1.1'
   }
   s.platform = :ios, '7.0'
   s.source_files = 'Pod/Classes/**/*'
+  s.resources = ['Pod/Classes/**/*.{xib}']
   s.resource_bundles = {
     'MWPhotoBrowser' => ['Pod/Assets/*.png']
   }

@@ -65,6 +65,11 @@
 // Return nil to display no caption
 - (NSString *)caption;
 
+- (NSString *)username;
+- (NSURL *)userImageURL;
+- (NSString *)reviewText;
+- (NSDate *)reviewDate;
+
 // Cancel any background loading of image data
 - (void)cancelAnyLoading;
 

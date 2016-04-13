@@ -671,13 +671,14 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 }
 
 - (MWCaptionView *)captionViewForPhotoAtIndex:(NSUInteger)index {
+    NSLog(@"captionViewForPhotoAtIndex");
     MWCaptionView *captionView = nil;
     if ([_delegate respondsToSelector:@selector(photoBrowser:captionViewForPhotoAtIndex:)]) {
         captionView = [_delegate photoBrowser:self captionViewForPhotoAtIndex:index];
     } else {
         id <MWPhoto> photo = [self photoAtIndex:index];
-        if ([photo respondsToSelector:@selector(caption)]) {
-            if ([photo caption]) captionView = [[MWCaptionView alloc] initWithPhoto:photo];
+        if ([photo respondsToSelector:@selector(caption)] || [photo respondsToSelector:@selector(reviewText)]) {
+            if ([photo caption] || [photo reviewText]) captionView = [[MWCaptionView alloc] initWithPhoto:photo];
         }
     }
     captionView.alpha = [self areControlsHidden] ? 0 : 1; // Initial alpha
@@ -809,6 +810,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 			MWLog(@"Added page at index %lu", (unsigned long)index);
             
             // Add caption
+            NSLog(@"Add caption");
             MWCaptionView *captionView = [self captionViewForPhotoAtIndex:index];
             if (captionView) {
                 captionView.frame = [self frameForCaptionView:captionView atIndex:index];

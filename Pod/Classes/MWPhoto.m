@@ -44,6 +44,15 @@
     return [[MWPhoto alloc] initWithURL:url];
 }
 
++ (MWPhoto *)photoWithURL:(NSURL *)url
+         username:(NSString *)username
+     userImageURL:(NSURL *)userImageURL
+       reviewText:(NSString *)reviewText
+       reviewDate:(NSDate *)reviewDate {
+    return [[MWPhoto alloc] initWithURL:url username:username userImageURL:userImageURL reviewText:reviewText reviewDate:reviewDate];
+    
+}
+
 + (MWPhoto *)photoWithAsset:(PHAsset *)asset targetSize:(CGSize)targetSize {
     return [[MWPhoto alloc] initWithAsset:asset targetSize:targetSize];
 }
@@ -73,6 +82,22 @@
         self.photoURL = url;
     }
     return self;
+}
+
+- (id)initWithURL:(NSURL *)url
+         username:(NSString *)username
+     userImageURL:(NSURL *)userImageURL
+       reviewText:(NSString *)reviewText
+       reviewDate:(NSDate *)reviewDate {
+    if ((self = [super init])) {
+        self.photoURL = url;
+        self.username = username;
+        self.userImageURL = userImageURL;
+        self.reviewText = reviewText;
+        self.reviewDate = reviewDate;
+    }
+    return self;
+    
 }
 
 - (id)initWithAsset:(PHAsset *)asset targetSize:(CGSize)targetSize {
