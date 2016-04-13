@@ -529,7 +529,6 @@
 		9F19BCDE9BF6E330E14588598DFC6337 /* Pods-MWPhotoBrowser_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MWPhotoBrowser_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9FDC9AD85BF40193CC65421CCF4A73A5 /* ImageError.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = ImageError.png; sourceTree = "<group>"; };
 		A09DD0AB6A512D74E5628070EBD56026 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		A154C978E2402F4B2694579E954FAC14 /* MWCaptionView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MWCaptionView.xib; sourceTree = "<group>"; };
 		A1BF1E794449AF3F514B2EE3C85F4B10 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		A2B692D3F450E25A5D8B17F524EA0720 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A59CA631962D8BFBF1D8BA4BA8F1F223 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
@@ -1228,7 +1227,6 @@
 			children = (
 				085DDFF37415AE01BB7A0F1C5E34CBE2 /* MWCaptionView.h */,
 				F9BE2F6B825251ED64EA6ECED8609FAC /* MWCaptionView.m */,
-				A154C978E2402F4B2694579E954FAC14 /* MWCaptionView.xib */,
 				03F4D67E3910EEA3596135F2D3B3750A /* MWCommon.h */,
 				E9D782AD5B31A6DC6841E3647F123495 /* MWGridCell.h */,
 				1EC7D710A0DDCA422EF6A3CEDC37C899 /* MWGridCell.m */,
