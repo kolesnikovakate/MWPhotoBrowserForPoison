@@ -671,7 +671,6 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 }
 
 - (MWCaptionView *)captionViewForPhotoAtIndex:(NSUInteger)index {
-    NSLog(@"captionViewForPhotoAtIndex");
     MWCaptionView *captionView = nil;
     if ([_delegate respondsToSelector:@selector(photoBrowser:captionViewForPhotoAtIndex:)]) {
         captionView = [_delegate photoBrowser:self captionViewForPhotoAtIndex:index];
@@ -810,7 +809,6 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 			MWLog(@"Added page at index %lu", (unsigned long)index);
             
             // Add caption
-            NSLog(@"Add caption");
             MWCaptionView *captionView = [self captionViewForPhotoAtIndex:index];
             if (captionView) {
                 captionView.frame = [self frameForCaptionView:captionView atIndex:index];
