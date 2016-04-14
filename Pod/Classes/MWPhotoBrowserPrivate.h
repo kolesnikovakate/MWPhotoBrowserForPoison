@@ -23,6 +23,7 @@
 	
 	// Views
 	UIScrollView *_pagingScrollView;
+    UICollectionView *_pagingCollectionView;
 	
 	// Paging & layout
 	NSMutableSet *_visiblePages, *_recycledPages;

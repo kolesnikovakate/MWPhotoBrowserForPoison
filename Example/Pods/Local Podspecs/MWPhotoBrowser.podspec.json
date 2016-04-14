@@ -25,9 +25,6 @@
     "ios": "7.0"
   },
   "source_files": "Pod/Classes/**/*",
-  "resources": [
-    "Pod/Classes/**/*.{xib}"
-  ],
   "resource_bundles": {
     "MWPhotoBrowser": [
       "Pod/Assets/*.png"

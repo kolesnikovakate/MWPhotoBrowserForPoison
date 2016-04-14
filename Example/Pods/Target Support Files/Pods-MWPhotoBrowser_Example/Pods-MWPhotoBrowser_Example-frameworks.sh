@@ -82,3 +82,16 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-MWPhotoBrowser_Example/DACircularProgress.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/MBProgressHUD.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/MWPhotoBrowser.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/SDWebImage.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-MWPhotoBrowser_Example/DACircularProgress.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/MBProgressHUD.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/MWPhotoBrowser.framework"
+  install_framework "Pods-MWPhotoBrowser_Example/SDWebImage.framework"
+fi

@@ -12,10 +12,12 @@
 #import "MWPhotoBrowserPrivate.h"
 #import "SDImageCache.h"
 #import "UIImage+MWPhotoBrowser.h"
+#import "MWPhotoPreviewCell.h"
 
 #define PADDING                  10
 
 static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
+NSString * const kMWPhotoPreviewCellIdentificator = @"MWPhotoPreviewCell";
 
 @implementation MWPhotoBrowser
 
@@ -93,6 +95,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 - (void)dealloc {
     [self clearCurrentVideo];
     _pagingScrollView.delegate = nil;
+    _pagingCollectionView.delegate = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self releaseAllUnderlyingPhotos:NO];
     [[SDImageCache sharedImageCache] clearMemory]; // clear memory
@@ -161,10 +164,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     // Toolbar
     _toolbar = [[UIToolbar alloc] initWithFrame:[self frameForToolbarAtOrientation:self.interfaceOrientation]];
     _toolbar.tintColor = [UIColor whiteColor];
-    _toolbar.barTintColor = nil;
-    [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
-    [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
-    _toolbar.barStyle = UIBarStyleBlackTranslucent;
+    _toolbar.barTintColor = [UIColor blackColor];
+    _toolbar.translucent = NO;
     _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     // Toolbar Items
@@ -188,6 +189,20 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         swipeGesture.direction = UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
         [self.view addGestureRecognizer:swipeGesture];
     }
+    
+    // Setup paging collection view
+    CGRect pagingCollectionViewFrame = [self frameForPagingCollectionView];
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    _pagingCollectionView=[[UICollectionView alloc] initWithFrame:pagingCollectionViewFrame collectionViewLayout:layout];
+    _pagingCollectionView.dataSource = self;
+    _pagingCollectionView.delegate = self;
+    [_pagingCollectionView registerClass:[MWPhotoPreviewCell class] forCellWithReuseIdentifier:kMWPhotoPreviewCellIdentificator];
+    [_pagingCollectionView registerNib:[UINib nibWithNibName:kMWPhotoPreviewCellIdentificator bundle:nil] forCellWithReuseIdentifier:kMWPhotoPreviewCellIdentificator];
+    [_pagingCollectionView setBackgroundColor:[UIColor blackColor]];
+    
+    [self.view addSubview:_pagingCollectionView];
     
 	// Super
     [super viewDidLoad];
@@ -969,7 +984,13 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     CGRect frame = self.view.bounds;// [[UIScreen mainScreen] bounds];
     frame.origin.x -= PADDING;
     frame.size.width += (2 * PADDING);
+    frame.size.height -= _pagingCollectionView.frame.size.height;
     return CGRectIntegral(frame);
+}
+
+- (CGRect)frameForPagingCollectionView {
+    CGFloat height = 50;
+    return CGRectIntegral(CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height));
 }
 
 - (CGRect)frameForPageAtIndex:(NSUInteger)index {
@@ -1000,7 +1021,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     CGFloat height = 44;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
         UIInterfaceOrientationIsLandscape(orientation)) height = 32;
-	return CGRectIntegral(CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height));
+	return CGRectIntegral(CGRectMake(0, self.view.bounds.size.height - height - _pagingCollectionView.frame.size.height, self.view.bounds.size.width, height));
 }
 
 - (CGRect)frameForCaptionView:(MWCaptionView *)captionView atIndex:(NSUInteger)index {
@@ -1637,6 +1658,27 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         [self.progressHUD hide:YES];
     }
     self.navigationController.navigationBar.userInteractionEnabled = YES;
+}
+
+#pragma mark - collectionView
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _photoCount;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MWPhotoPreviewCell *cell = (MWPhotoPreviewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kMWPhotoPreviewCellIdentificator forIndexPath:indexPath];
+    id <MWPhoto> photo = [self photoAtIndex:indexPath.item];
+    [cell setImageUrl:[photo photoURL]];
+
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(50, 50);
 }
 
 @end
