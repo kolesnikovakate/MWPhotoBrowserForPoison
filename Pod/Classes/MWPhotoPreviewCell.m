@@ -22,7 +22,7 @@
 }
 
 - (void)setImageUrl:(NSURL *)imageUrl {
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.imageView sd_setImageWithURL:imageUrl];
 }
 

@@ -14,10 +14,11 @@
 #import "UIImage+MWPhotoBrowser.h"
 #import "MWPhotoPreviewCell.h"
 
-#define PADDING                  10
+#define PADDING 10
 
 static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 NSString * const kMWPhotoPreviewCellIdentificator = @"MWPhotoPreviewCell";
+static const CGFloat kPhotoPreviewCellSize = 50;
 
 @implementation MWPhotoBrowser
 
@@ -989,7 +990,7 @@ NSString * const kMWPhotoPreviewCellIdentificator = @"MWPhotoPreviewCell";
 }
 
 - (CGRect)frameForPagingCollectionView {
-    CGFloat height = 50;
+    CGFloat height = kPhotoPreviewCellSize + PADDING*2;
     return CGRectIntegral(CGRectMake(0, self.view.bounds.size.height - height, self.view.bounds.size.width, height));
 }
 
@@ -1662,6 +1663,13 @@ NSString * const kMWPhotoPreviewCellIdentificator = @"MWPhotoPreviewCell";
 
 #pragma mark - collectionView
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self jumpToPageAtIndex:indexPath.item animated:YES];
+    [collectionView scrollToItemAtIndexPath:indexPath
+                           atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                   animated:YES];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return _photoCount;
@@ -1678,7 +1686,18 @@ NSString * const kMWPhotoPreviewCellIdentificator = @"MWPhotoPreviewCell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(50, 50);
+    return CGSizeMake(kPhotoPreviewCellSize, kPhotoPreviewCellSize);
 }
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return PADDING;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+{
+    int screenWidth = [UIScreen mainScreen].bounds.size.width;
+    return UIEdgeInsetsMake(0, screenWidth / 2.0 - 25, 0, screenWidth / 2.0 - 25);
+}
+
 
 @end

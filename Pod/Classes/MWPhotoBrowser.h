@@ -38,7 +38,7 @@
 
 @end
 
-@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
 @property (nonatomic) BOOL zoomPhotosToFill;
