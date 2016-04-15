@@ -192,29 +192,33 @@
                                          reviewText:@"Тут я пишу отзыв."
                                          reviewDate:[NSDate date]]];
             
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo5" ofType:@"jpg"]]];
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_b.jpg"]];
             photo.username = @"Екатерина Колесникова";
             photo.userImageURL = [NSURL URLWithString:@"https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/413820_105567142909931_181440063_o.jpg"];
             photo.reviewText = @"Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв. Тут я пишу отзыв.";
             photo.reviewDate = [NSDate date];
             [photos addObject:photo];
             
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo5" ofType:@"jpg"]]];
-            photo.caption = @"Fireworks";
-			[photos addObject:photo];
-            photo = [MWPhoto photoWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"photo2" ofType:@"jpg"]]];
-            photo.caption = @"The London Eye is a giant Ferris wheel situated on the banks of the River Thames, in London, England.";
-			[photos addObject:photo];
-            photo = [MWPhoto photoWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"photo3" ofType:@"jpg"]]];
-            photo.caption = @"York Floods";
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3779/9522424255_28a5a9d99c_b.jpg"]];
+            photo.caption = @"Tube";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"video_thumb" ofType:@"jpg"]]];
-            photo.videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"]];
-            photo.caption = @"Big Buck Bunny";
+            
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3777/9522276829_fdea08ffe2_b.jpg"]];
+            photo.caption = @"Flat White at Elliot's";
             [photos addObject:photo];
-            photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo4" ofType:@"jpg"]]];
-            photo.caption = @"Campervan";
-			[photos addObject:photo];
+            
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8379/8530199945_47b386320f_b.jpg"]];
+            photo.caption = @"Woburn Abbey";
+            [photos addObject:photo];
+            
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm9.static.flickr.com/8364/8268120482_332d61a89e_b.jpg"]];
+            photo.caption = @"Frosty walk";
+            [photos addObject:photo];
+            
+            photo = [MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm8.static.flickr.com/7109/7604416018_f23733881b_b.jpg"]];
+            photo.caption = @"Jury's Inn";
+            [photos addObject:photo];
+            
             // Options
             enableGrid = NO;
 			break;

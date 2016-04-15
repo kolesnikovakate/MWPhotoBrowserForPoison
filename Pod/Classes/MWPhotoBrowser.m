@@ -200,7 +200,6 @@ static const CGFloat kPhotoPreviewCellSize = 50;
     _pagingCollectionView.dataSource = self;
     _pagingCollectionView.delegate = self;
     [_pagingCollectionView registerClass:[MWPhotoPreviewCell class] forCellWithReuseIdentifier:kMWPhotoPreviewCellIdentificator];
-    [_pagingCollectionView registerNib:[UINib nibWithNibName:kMWPhotoPreviewCellIdentificator bundle:nil] forCellWithReuseIdentifier:kMWPhotoPreviewCellIdentificator];
     [_pagingCollectionView setBackgroundColor:[UIColor blackColor]];
     
     [self.view addSubview:_pagingCollectionView];
@@ -506,6 +505,7 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 	// Toolbar
 	_toolbar.frame = [self frameForToolbarAtOrientation:self.interfaceOrientation];
     
+    _pagingCollectionView.frame = [self frameForPagingCollectionView];
 	// Remember index
 	NSUInteger indexPriorToLayout = _currentPageIndex;
 	
@@ -921,6 +921,11 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 
 // Handle page changes
 - (void)didStartViewingPageAtIndex:(NSUInteger)index {
+    //
+//    [_pagingCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
+//                                  atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+//                                          animated:YES];
+    [_pagingCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     
     // Handle 0 photos
     if (![self numberOfPhotos]) {
@@ -976,7 +981,6 @@ static const CGFloat kPhotoPreviewCellSize = 50;
     
     // Update nav
     [self updateNavigation];
-    
 }
 
 #pragma mark - Frame Calculations
@@ -1664,10 +1668,8 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 #pragma mark - collectionView
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self jumpToPageAtIndex:indexPath.item animated:YES];
-    [collectionView scrollToItemAtIndexPath:indexPath
-                           atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-                                   animated:YES];
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    [self jumpToPageAtIndex:indexPath.item animated:NO];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -1696,7 +1698,8 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 {
     int screenWidth = [UIScreen mainScreen].bounds.size.width;
-    return UIEdgeInsetsMake(0, screenWidth / 2.0 - 25, 0, screenWidth / 2.0 - 25);
+    CGFloat inset = screenWidth / 2.0 - kPhotoPreviewCellSize/2;
+    return UIEdgeInsetsMake(0, inset, 0, inset);
 }
 
 

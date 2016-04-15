@@ -13,7 +13,6 @@
 		07A875E8B415920114F0DDB2328037F0 /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33733776A472D9FBF1868E633449D7E6 /* MWPhotoBrowser.m */; };
 		08633497048C6516EEEE5B61AF8932F7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334AB9758A854031D560D6FAD2C2B973 /* XCTest.framework */; };
 		092A8385B06DB60A5D330B704E48D36E /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 93EAF203FD8AD724CF3C53F26C25275A /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09484C8FEAB70C17B54A8D1776CEF971 /* MWPhotoPreviewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 19E918B59D1B6FB710A116BF37AA43C9 /* MWPhotoPreviewCell.xib */; };
 		0C0F21F5DEBB5B9C2A4F22DAC13C8CD0 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = E6091C17BE2A26D28B7694E9CCA662BC /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C5FDDFAA8EF749AEB78EE3213E49633 /* ExpectaObject+FBSnapshotTest.h in Headers */ = {isa = PBXBuildFile; fileRef = EF671C7AED8A9E9CDB735F9F9177720D /* ExpectaObject+FBSnapshotTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C6FF91EB1F0391ED75DC72D31D159EF /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB2778304D37283FB300F73ACB11A4 /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -431,7 +430,6 @@
 		18357013986897DBD1DAD7AA7CCBD990 /* MWPhotoBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MWPhotoBrowser-umbrella.h"; sourceTree = "<group>"; };
 		186AD1EAC030E82CB21FC22C977A95BB /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWPhotoBrowser.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A4E0975383B04248AB6DE13608A1B7 /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "Expecta/Matchers/EXPMatchers+beFalsy.h"; sourceTree = "<group>"; };
-		19E918B59D1B6FB710A116BF37AA43C9 /* MWPhotoPreviewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MWPhotoPreviewCell.xib; sourceTree = "<group>"; };
 		1B0FD4C728E6B87B8794EDB79C9D3442 /* SPTExampleGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = Specta/Specta/SPTExampleGroup.h; sourceTree = "<group>"; };
 		1D7A80F4D42B011F098474460BD62770 /* Pods-MWPhotoBrowser_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MWPhotoBrowser_Tests.modulemap"; sourceTree = "<group>"; };
 		1DACFFD0030AE58738B0E4E34342EE86 /* UIBarButtonItemArrowLeft.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UIBarButtonItemArrowLeft.png; sourceTree = "<group>"; };
@@ -1240,7 +1238,6 @@
 				B013B17157FB64367976E38AE6DB3F74 /* MWPhotoBrowserPrivate.h */,
 				9E13A623B68C40C4745F5C5BDE10EFA1 /* MWPhotoPreviewCell.h */,
 				8C1B57ED92071D8E3058675FABACD5A5 /* MWPhotoPreviewCell.m */,
-				19E918B59D1B6FB710A116BF37AA43C9 /* MWPhotoPreviewCell.xib */,
 				A9618291338763BDCF4CC8D2279A317E /* MWPhotoProtocol.h */,
 				DA0DB4781C01BADE225DD3C3318D232C /* MWTapDetectingImageView.h */,
 				F8E4DAB8B769E6867747A37BB55F1445 /* MWTapDetectingImageView.m */,
@@ -1859,7 +1856,6 @@
 				7A02814295BEFB43D453B0668B35174E /* MWPhotoBrowser-dummy.m in Sources */,
 				07A875E8B415920114F0DDB2328037F0 /* MWPhotoBrowser.m in Sources */,
 				DB518CE454C676A2B47BC83EEA25623B /* MWPhotoPreviewCell.m in Sources */,
-				09484C8FEAB70C17B54A8D1776CEF971 /* MWPhotoPreviewCell.xib in Sources */,
 				72E3FB96C24CEA2AD0C000E780F30DBA /* MWTapDetectingImageView.m in Sources */,
 				69CE2AE6E19465A04ECAD0B435B2C3D0 /* MWTapDetectingView.m in Sources */,
 				54B0CCD9BE768BE7E369D7F290FC931E /* MWZoomingScrollView.m in Sources */,
