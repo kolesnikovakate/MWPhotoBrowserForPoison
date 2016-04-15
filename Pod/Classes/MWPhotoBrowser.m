@@ -69,6 +69,7 @@ static const CGFloat kPhotoPreviewCellSize = 50;
     _previousPageIndex = NSUIntegerMax;
     _displayActionButton = YES;
     _displayNavArrows = NO;
+    _displayAddPhotoButton = NO;
     _zoomPhotosToFill = YES;
     _performingLayout = NO; // Reset on view did appear
     _rotating = NO;
@@ -177,8 +178,14 @@ static const CGFloat kPhotoPreviewCellSize = 50;
         _previousButton = [[UIBarButtonItem alloc] initWithImage:previousButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(gotoPreviousPage)];
         _nextButton = [[UIBarButtonItem alloc] initWithImage:nextButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(gotoNextPage)];
     }
+    
     if (self.displayActionButton) {
         _actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
+    }
+    
+    if (self.displayAddPhotoButton) {
+        UIImage *addPhotoButtonImage = [UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/addPhotoIconWhite" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]];
+        _actionButton = [[UIBarButtonItem alloc] initWithImage:addPhotoButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(needOpenAddPhoto)];
     }
     
     // Update
@@ -1151,6 +1158,11 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 	// Update timer to give more time
 	[self hideControlsAfterDelay];
 	
+}
+- (void)needOpenAddPhoto {
+    if ([self.delegate respondsToSelector:@selector(needOpenAddPhotosInPhotoBrowser:)]) {
+        [self.delegate needOpenAddPhotosInPhotoBrowser:self];
+    }
 }
 
 - (void)gotoPreviousPage {
