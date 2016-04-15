@@ -176,6 +176,9 @@
     BOOL startOnGrid = NO;
     BOOL autoPlayOnAppear = NO;
     BOOL displayAddPhotoButton = NO;
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
 	switch (indexPath.row) {
 		case 0:
             // Photos
@@ -186,6 +189,7 @@
             enableGrid = NO;
 			break;
 		case 1: {
+            [browser setPlaceNameInTitle:@"Шаурма Экспресс"];
             displayAddPhotoButton = YES;
             // Local Photos and Videos
             [photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"https://scontent-arn2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/413820_105567142909931_181440063_o.jpg"]
@@ -1132,7 +1136,6 @@
     self.thumbs = thumbs;
 	
 	// Create browser
-	MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
     browser.displayActionButton = displayActionButton;
     browser.displayNavArrows = displayNavArrows;
     browser.displayAddPhotoButton = displayAddPhotoButton;

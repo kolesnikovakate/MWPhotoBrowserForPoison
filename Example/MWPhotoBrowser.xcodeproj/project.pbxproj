@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0233C5031CC143620014ABA2 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0233C5021CC143620014ABA2 /* ProximaNova-Bold.otf */; };
 		025363681CBE958E00D85CC5 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 025363671CBE958E00D85CC5 /* ProximaNova-Reg.otf */; };
 		0EC5D4B51B4C46E50092ACC1 /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC5D4A41B4C46E50092ACC1 /* photo1.jpg */; };
 		0EC5D4B61B4C46E50092ACC1 /* photo1t.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EC5D4A51B4C46E50092ACC1 /* photo1t.jpg */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0233C5021CC143620014ABA2 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		025363671CBE958E00D85CC5 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
 		0EC5D4A41B4C46E50092ACC1 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo1.jpg; path = "MWPhotoBrowser/Local Media/photo1.jpg"; sourceTree = SOURCE_ROOT; };
 		0EC5D4A51B4C46E50092ACC1 /* photo1t.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo1t.jpg; path = "MWPhotoBrowser/Local Media/photo1t.jpg"; sourceTree = SOURCE_ROOT; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				025363671CBE958E00D85CC5 /* ProximaNova-Reg.otf */,
+				0233C5021CC143620014ABA2 /* ProximaNova-Bold.otf */,
 				6003F595195388D20070C39A /* MWPhotoBrowser-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -354,6 +357,7 @@
 				0EC5D4C91B4C480E0092ACC1 /* video_thumb.jpg in Resources */,
 				0EC5D4BC1B4C46E50092ACC1 /* photo4t.jpg in Resources */,
 				0EC5D4BA1B4C46E50092ACC1 /* photo3t.jpg in Resources */,
+				0233C5031CC143620014ABA2 /* ProximaNova-Bold.otf in Resources */,
 				0EC5D4B91B4C46E50092ACC1 /* photo3.jpg in Resources */,
 				0EC5D4B81B4C46E50092ACC1 /* photo2t.jpg in Resources */,
 			);

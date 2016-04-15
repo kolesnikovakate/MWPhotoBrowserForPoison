@@ -313,7 +313,6 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 	_pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:_currentPageIndex];
     [self tilePages];
     _performingLayout = NO;
-    
 }
 
 // Release any retained subviews of the main view.
@@ -454,6 +453,34 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 }
 
 #pragma mark - Nav Bar Appearance
+
+- (void)setPlaceNameInTitle:(NSString *)placeNameInTitle {
+    self.navigationItem.titleView = [self titleViewWithPlaceName:placeNameInTitle];
+}
+
+- (UIView *)titleViewWithPlaceName:(NSString *)placeName {
+    CGRect titleViewFrame = CGRectMake(0, 0, 200, 33);
+    UIView *titleView = [[UIView alloc] initWithFrame:titleViewFrame];
+    
+    CGRect title1LabelFrame = CGRectMake(0, 0, 200, 18);
+    CGRect title2LabelFrame = CGRectMake(0, 18, 200, 15);
+    
+    UILabel *label1Title = [[UILabel alloc] initWithFrame:title1LabelFrame];
+    label1Title.text = [NSString stringWithFormat:@"%lu фото", [self numberOfPhotos]];
+    label1Title.textAlignment = NSTextAlignmentCenter;
+    label1Title.textColor = [UIColor whiteColor];
+    label1Title.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    [titleView addSubview:label1Title];
+    
+    UILabel *label2Title = [[UILabel alloc] initWithFrame:title2LabelFrame];
+    label2Title.text = placeName;
+    label2Title.textAlignment = NSTextAlignmentCenter;
+    label2Title.textColor = [UIColor colorWithRed:145/255.0f green:145/255.0f blue:145/255.0f alpha:1];
+    label2Title.font = [UIFont fontWithName:@"ProximaNova-Bold" size:12];
+    [titleView addSubview:label2Title];
+    
+    return titleView;
+}
 
 - (void)setNavBarAppearance:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];

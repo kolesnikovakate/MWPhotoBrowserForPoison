@@ -70,6 +70,8 @@
 // Set page that photo browser starts on
 - (void)setCurrentPhotoIndex:(NSUInteger)index;
 
+- (void)setPlaceNameInTitle:(NSString *)placeNameInTitle;
+
 // Navigation
 - (void)showNextPhotoAnimated:(BOOL)animated;
 - (void)showPreviousPhotoAnimated:(BOOL)animated;
