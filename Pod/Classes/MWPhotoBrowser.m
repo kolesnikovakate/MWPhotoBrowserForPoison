@@ -139,6 +139,7 @@ static const CGFloat kPhotoPreviewCellSize = 50;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
     
     // Validate grid settings
     if (_startOnGrid) _enableGrid = YES;
@@ -673,6 +674,11 @@ static const CGFloat kPhotoPreviewCellSize = 50;
         [self performLayout];
         [self.view setNeedsLayout];
     }
+    
+    // Update pagingCollectionView
+    [_pagingCollectionView reloadData];
+    // Update nav
+    [self updateNavigation];
     
 }
 
