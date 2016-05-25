@@ -14,7 +14,7 @@
 
 static const CGFloat labelPadding = 10;
 static const CGFloat reviewPadding = 16;
-static const CGFloat userImageSize = 24;
+static const CGFloat userImageSize = 28;
 static const CGFloat reviewDateLabelWidth = 100;
 
 // Private
@@ -127,7 +127,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     
     self.userNameLabel.numberOfLines = 1;
     self.userNameLabel.textColor = [UIColor whiteColor];
-    self.userNameLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    self.userNameLabel.font = [UIFont systemFontOfSize:14];
     
     if ([_photo respondsToSelector:@selector(username)]) {
         self.userNameLabel.text = [_photo username] ? : @" ";
@@ -146,7 +146,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     self.reviewDateLabel.textAlignment = NSTextAlignmentRight;
     self.reviewDateLabel.numberOfLines = 1;
     self.reviewDateLabel.textColor = [UIColor colorWithRed:145/255.0f green:145/255.0f blue:145/255.0f alpha:1];
-    self.reviewDateLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:12];
+    self.reviewDateLabel.font = [UIFont systemFontOfSize:14];
     
     if ([_photo respondsToSelector:@selector(reviewDate)]) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -170,7 +170,7 @@ static const CGFloat reviewDateLabelWidth = 100;
     
     self.reviewTextLabel.numberOfLines = 0;
     self.reviewTextLabel.textColor = [UIColor whiteColor];
-    self.reviewTextLabel.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    self.reviewTextLabel.font = [UIFont systemFontOfSize:14];
     
     if ([_photo respondsToSelector:@selector(reviewText)]) {
         self.reviewTextLabel.text = [_photo reviewText] ? : @" ";

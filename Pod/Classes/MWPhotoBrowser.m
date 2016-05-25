@@ -470,14 +470,14 @@ static const CGFloat kPhotoPreviewCellSize = 50;
     label1Title.text = [NSString stringWithFormat:@"%lu фото", [self numberOfPhotos]];
     label1Title.textAlignment = NSTextAlignmentCenter;
     label1Title.textColor = [UIColor whiteColor];
-    label1Title.font = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
+    label1Title.font = [UIFont systemFontOfSize:14];
     [titleView addSubview:label1Title];
     
     UILabel *label2Title = [[UILabel alloc] initWithFrame:title2LabelFrame];
     label2Title.text = placeName;
     label2Title.textAlignment = NSTextAlignmentCenter;
     label2Title.textColor = [UIColor colorWithRed:145/255.0f green:145/255.0f blue:145/255.0f alpha:1];
-    label2Title.font = [UIFont fontWithName:@"ProximaNova-Bold" size:12];
+    label2Title.font = [UIFont systemFontOfSize:14];
     [titleView addSubview:label2Title];
     
     return titleView;
