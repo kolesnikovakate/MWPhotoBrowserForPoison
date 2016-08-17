@@ -467,7 +467,13 @@ static const CGFloat kPhotoPreviewCellSize = 50;
     CGRect title2LabelFrame = CGRectMake(0, 18, 200, 15);
     
     UILabel *label1Title = [[UILabel alloc] initWithFrame:title1LabelFrame];
-    label1Title.text = [NSString stringWithFormat:@"%lu фото", [self numberOfPhotos]];
+    NSString *photosText;
+    if ([self numberOfPhotos] == 1) {
+        photosText = NSLocalizedString(@"photo", @"Used in the context: '1 photo'");
+    } else {
+        photosText = NSLocalizedString(@"photos", @"Used in the context: '3 photos'");
+    }
+    label1Title.text = [NSString stringWithFormat:@"%lu %@", [self numberOfPhotos], photosText];
     label1Title.textAlignment = NSTextAlignmentCenter;
     label1Title.textColor = [UIColor whiteColor];
     label1Title.font = [UIFont systemFontOfSize:14];
